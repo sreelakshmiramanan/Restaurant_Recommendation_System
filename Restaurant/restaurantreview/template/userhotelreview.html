@@ -1,0 +1,82 @@
+{% extends "commonbaseuser.html" %}
+{% block content2 %}
+<style>
+    table{
+        padding: 10px;
+    }
+    td,th{
+        padding: 10px;
+    }
+    
+    
+</style>
+{% for d in data %}
+<center>
+<table>
+    <tr>
+        <th>
+            HOTEL DETAILS
+
+        </th>
+    </tr>
+    <tr>
+        <td>
+            <img src="../static/media/{{d.image}}" height="400px" width="400px">
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{d.name}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Address  :  {{d.address}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Opened Date  :   {{d.dateopen}}    
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contact  :  {{d.contact}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Email   :    {{d.email}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Rating   :   {{d.realrat}}  /  5
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="/review?id={{d.id}}"><u>See all Reviews</u></a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="/special?id={{d.id}}"><u>Display Specials</u></a>
+        </td>
+    </tr>
+    <form method="POST">
+        {% csrf_token %}
+    <tr id="comment">
+        <td><textarea name="review" placeholder="Add Review"></textarea></td>
+         <input type="hidden" name="hotel" value="{{d.id}}"> 
+    </tr>
+    <tr>
+        <td><button type="submit">Submit Review</button></td>
+    </tr>
+</form>
+</table>
+</center>
+{% endfor %}
+
+{% endblock %}

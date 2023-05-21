@@ -1,0 +1,43 @@
+{% extends "commonbaseuser.html" %}
+{% block content2 %}
+
+
+<style>
+    th,td{
+        padding: 10px;
+    }
+    table{background-color:rgb(255, 255, 255);}
+    </style>
+    <center>
+    <div style="margin: 122px;">
+        <h1 style="color:rgb(255, 81, 0)"">Requests</h1>
+        
+        <table  border="20" style="margin:50px;"> 
+          
+            <tr>
+                
+                <th>SL.No</th>
+                <th>REQUEST</th>
+                
+              
+                
+                <th>RECOMMENDED HOTEL NAME</th>
+             
+                
+            </tr>
+            
+                {% for d in data %}
+        
+            <tr>
+                <td>{{d.id}}</td>
+                <td>{{d.request}}</td>
+                <td>{{d.hotel.name}}</td>
+               
+            </tr>
+            {% endfor %}
+            
+        </table>
+    </div>
+</center>
+
+{% endblock %}

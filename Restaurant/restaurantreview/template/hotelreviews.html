@@ -1,0 +1,30 @@
+{% extends "commonbasehotel.html" %}
+{% block content4 %}
+
+
+<style>
+    tr,td,th,h2{padding:15px;}
+    th,h2{text-decoration: underline;}
+</style>
+<center>
+    <h2>REVIEWS</h2>
+<table stye="padding:10px">
+
+
+<tr>
+    <th>Name</th>
+    <th>Review</th>
+    <th>Date of review</th>
+</tr>
+{% for d in data %}
+<tr>
+<td>{{d.uname.fname}}</td>
+<td>{{d.review}}</td>
+<td>{{d.dateofreview}}</td>
+</tr>
+
+{% endfor %}
+</table>
+</center>
+
+{% endblock %}

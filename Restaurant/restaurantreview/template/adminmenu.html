@@ -1,0 +1,59 @@
+{% extends "commonbaseadmin.html" %}
+{% block content1 %}
+
+
+<style>
+    h3,h1{padding: 10px;}
+</style>
+<h1 align="center"><u>OUR SPECIALS</u></h1>
+
+<div class="w3-services-grids py-lg-4 text-center" style="padding: 20px;">
+    <div class="fea-gd-vv row">
+        {% for d in data %}
+        <div class="col-lg-4 col-md-7" style="margin-bottom: 30px">
+            <div class="feature-gd icon-yellow">
+                <div class="icon">
+                    <i
+                        ><img
+                            src="../static/media/{{d.image}}"
+                            style="
+                                height: 200px;
+                                width: 200px;
+                                padding-right: 26px;
+                                padding-bottom: 5px;
+                                
+                            "
+                    /></i>
+                </div>
+                <div class="info" style="margin-top: 50px">
+                    <!-- <h3>{{d.image}}</h3> -->
+                    <h3>{{d.dishname}}</h3>
+                    <h3>{{d.price}}Rs</h3>
+                    <!-- <h3>{{d.contact}}</h3> -->
+                    <ul>
+                        <li class="cary-li-w3-agileits">
+                            <div class="snipcart-details top_brand_home_details">
+                                <form action="#" method="post">
+                                    <!-- <fieldset>
+                                        <a href="/comment?id={{d.id}}"
+                                            ><input
+                                                type="button"
+                                                name="submit"
+                                                value="COMMENT"
+                                                class="btn btn-primary"
+                                        /></a>
+                                    </fieldset> -->
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock %}

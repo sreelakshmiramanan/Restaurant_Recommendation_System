@@ -1,0 +1,99 @@
+{% extends "commonbaseadmin.html" %}
+{% block content1 %}
+
+<!-- 
+<style>
+    tr,td,th{padding:15px;}
+    th{text-decoration: underline;}
+</style>
+<center>
+<table style="padding: 15px;">
+    <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Contact</th>
+        <th>Email</th>
+        <th>Opened Date</th>
+        <th>Rating</th>
+    </tr>
+    {% for d in data %}
+    <tr>
+        <td><img src="../static/media/{{d.image}}" width="200px" height="200px"></td>
+        <td>{{d.name}}</td>
+        <td>{{d.address}}</td>
+        <td>{{d.contact}}</td>
+        <td>{{d.email}}</td>
+        <td>{{d.dateopen}}</td>
+        
+        <td>{{d.realrat}} / 5</td>
+        <td><a href="/adminhotelreview?id={{d.id}}"><u>VIEW</u></a></td>
+        <td><a href="/removehotel?id={{d.id}}"><u>REMOVE</u></a></td>
+        <td></td>
+    </tr>
+    {% endfor %}
+</table>
+</center> -->
+
+<style>
+    h3,h1,fieldset{padding: 10px;}
+</style>
+<h1 align="center"><u>HOTELS</u></h1>
+<div class="w3-services-grids py-lg-4 text-center" style="padding: 20px;">
+    <div class="fea-gd-vv row">
+        {% for d in data %}
+        <div class="col-lg-4 col-md-7" style="margin-bottom: 30px">
+            <div class="feature-gd icon-yellow">
+                <div class="icon">
+                    <i
+                        ><img
+                            src="../static/media/{{d.image}}"
+                            style="
+                                height: 200px;
+                                width: 200px;
+                                padding-right: 26px;
+                                padding-bottom: 5px;
+                                
+                            "
+                    /></i>
+                </div>
+                <div class="info" style="margin-top: 50px">
+                    <h3>{{d.name}}</h3>
+                    <h3>{{d.address}}</h3>
+                    <h3>{{d.realrat}} / 5</h3>
+                    <h3>{{d.contact}}</h3>
+                    <ul>
+                        <li class="cary-li-w3-agileits">
+                            <div class="snipcart-details top_brand_home_details">
+                                <form action="#" method="post">
+                                    <fieldset>
+                                        <a href="/adminhotelreview?id={{d.id}}"
+                                            ><input
+                                                type="button"
+                                                name="submit"
+                                                value="VIEW"
+                                                class="btn btn-primary"
+                                        /></a>
+                                    </fieldset>
+                                    <fieldset>
+                                        <a href="/removehotel?id={{d.id}}"
+                                            ><input
+                                                type="button"
+                                                name="submit"
+                                                value="REMOVE"
+                                                class="btn btn-primary"
+                                        /></a>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

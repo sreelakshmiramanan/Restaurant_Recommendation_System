@@ -1,0 +1,108 @@
+{% extends "commonbase.html" %}
+{% block content %}
+
+
+
+
+
+
+
+
+    <!-- contact page -->
+    <section class="w3l-contact-11 py-5" id="contact">
+        <div class="container py-md-5 py-5">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-8">
+                    <div class="section-heading mb-sm-5 mb-4">
+                        <h3 class="title-style mb-2">REGISTRATION</h3>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="form-41-mian mt-5 pt-lg-5 pt-md-4">
+                <div class="container">
+                    <div class="form-inner-cont">
+                        <form  method="post" class="signin-form">
+                            {% csrf_token %}
+                            <div class="col-md-4 w3l-contact-form">
+                                <div class="w3l-contact-form-row">
+                                    <label for="w3lName"></label>
+                                    <input type="text" name="name" id="w3lName"  required placeholder="Enter Your First Name" border-color: red; />
+                                </div>
+                                <div class="w3l-contact-form-row">
+                                    <label for="w3lSender"></label>
+                                    <input type="text" name="lname" placeholder="Enter Your Last Name"  required class="contact-input">
+                                    
+                                </div>
+
+                                
+                                <div class="w3l-contact-form-row">
+                                    <label for="w3lSender"></label>
+                                    <input type="number" name="phone" placeholder="Enter Your Phone Number" required pattern="[6-9]{3}[1-9]{7}" class="contact-input">
+                                </div>
+                                <div class="w3l-contact-form-row">
+                                    <label for="w3lSender"></label>
+                                    <input type="email" name="email" id="w3lSender" required placeholder="Enter Your Email Id" />
+                                </div>
+
+                                
+                                
+                                
+                                <div class="w3l-contact-form-row">
+                                    <label for="w3lSender"></label>
+                                     <input type="password" name="pass" placeholder="Enter A password" required pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" class="contact-input"> 
+                                    
+                                </div>
+                                <div class="w3l-contact-form-row">
+                                    <label for="w3lSender"></label>
+                                    <input type="password" name="pass1" placeholder="Conform Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" class="contact-input">
+                                </div>
+                                <div class="w3l-contact-form-row">
+                                    <label for="w3lSender"></label>
+                                    <!-- <input type="number" name="w3lPhone" placeholder="" required  class="contact-input"> -->
+                                    <textarea name="add" placeholder="Enter Address" required class=""></textarea>
+                                </div>
+                                
+                            </div>
+                            <!-- <div class="form-input">
+                                <label for="w3lMessage">Message(Required)*</label>
+                                <textarea placeholder="" name="w3lMessage" id="w3lMessage" required=""></textarea>
+                            </div> -->
+                            <div class="submit text-right">
+                                <button type="submit" class="btn btn-style-white btn-style-primary">Register
+                                    </button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- <div class="map mt-5">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11593.270381900502!2d1.625295237146618!3d43.412190703604765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aeec35b22ea25d%3A0xfdeadc6df532d0bf!2sLandon%2C%2031450%20Montesquieu-Lauragais%2C%20France!5e0!3m2!1sen!2sin!4v1611816123801!5m2!1sen!2sin"
+                            frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //contact page -->
+
+
+
+    {% if messages %}
+    {% for msg in messages %}
+    <script>alert('{{msg}}')</script>
+    {% endfor %}
+    {% endif %}
+
+    {% endblock %}
+
+
+
+
+
+
+
+    

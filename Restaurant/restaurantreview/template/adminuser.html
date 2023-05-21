@@ -1,0 +1,47 @@
+{% extends "commonbaseadmin.html" %}
+{% block content1 %}
+
+
+<style>
+    th,td{
+        padding: 10px;
+    }
+    table{background-color:rgb(255, 255, 255);}
+    </style>
+    <center>
+    <div style="margin: 122px;">
+        <h1 style="color:rgb(255, 81, 0)"">Registered Users</h1>
+        
+        <table  border="20" style="margin:50px;"> 
+          
+            <tr>
+                
+                <th>FIRST NAME</th>
+                <th>LAST NAME</th>
+                
+              
+                
+                <th>ADDRESS</th>
+                <th>CONTACT</th>
+                <th>EMAIL</th>
+                <th>ACTION</th>
+                
+            </tr>
+            
+                {% for d in data %}
+        
+            <tr>
+                <td>{{d.fname}}</td>
+                <td>{{d.lname}}</td>
+                <td>{{d.address}}</td>
+                <td>{{d.contact}}</td>
+                <td>{{d.email}}</td>
+                <td><a href="/remove?id={{d.id}}">Remove</a></td>
+            </tr>
+            {% endfor %}
+            
+        </table>
+    </div>
+</center>
+
+{% endblock %}
